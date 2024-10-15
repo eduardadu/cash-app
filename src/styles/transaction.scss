@@ -1,0 +1,105 @@
+// Transaction Wrapper
+.transactions-wrapper {
+  position: relative;
+  margin: 1rem;
+  height: 70vh;
+  overflow: auto;
+  @include flexbox(column);
+
+  .transaction {
+    height: 60px;
+    @include flexbox(row);
+    border-bottom: 1px solid $color-border-light;
+
+    &:hover {
+      background-color: $color-background-light-2;
+
+      .config-buttons {
+        width: 104px;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+      &:hover {
+        border-bottom-left-radius: $base-border-radius;
+        border-bottom-right-radius: $base-border-radius;
+      }
+    }
+
+    &:first-child:hover {
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+    }
+
+    .transaction-info {
+      width: 100%;
+      @include flexbox(row);
+    }
+  }
+
+  .config-buttons {
+    height: 100%;
+    background-color: $color-border-light;
+    @include centerFlex(row);
+    width: 0;
+    overflow: hidden;
+    transition: width 0.4s;
+
+    button {
+      padding: 0 8px;
+
+      img {
+        margin: 0 auto;
+        display: block;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .month,
+  .year {
+    margin-bottom: 0.4rem;
+  }
+
+  .year {
+    margin: 20px 0 0.4rem;
+    @include centerFlex(row);
+
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      border-bottom: $base-border-thickness solid $color-border-light;
+      margin: 0 24px;
+    }
+  }
+
+  .month-group,
+  .year-group {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .date {
+    color: $color-text-light;
+    font-size: $font-size-sm;
+    width: 1.5rem;
+  }
+
+  .group-wrapper {
+    @include wrapper(auto, auto, $color-border-light);
+  }
+}
+
+// Category
+.category {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  @include centerFlex(row);
+
+  img {
+    width: 2rem;
+  }
+}

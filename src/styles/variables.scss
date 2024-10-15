@@ -1,0 +1,43 @@
+@use "sass:math";
+
+// Color Variables
+$color-primary: #0d8742;
+$color-text-base: #2d2d2d;
+$color-text-light: #8c8c8c;
+$color-hightlight: #0bdf71;
+$color-earning: #11bf65;
+$color-expense: #bf5111;
+$color-error: #bf5111;
+$color-background-dark: #ececec;
+$color-background-light: #f3f3f3;
+$color-background-light-2: #ededed;
+$color-border: #c3c3c3;
+$color-border-light: #d9d9d9;
+
+//Color Palette Array
+$colors: (
+  "primary": $color-primary,
+  "text-base": $color-text-base,
+  "border": $color-border,
+);
+
+//Spacing Variables
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
+//Borders Variables
+$base-border-thickness: 2px;
+$base-border-radius: 8px;
+
+//Padding Variables
+$base-padding: 8px;
+
+//Font variables
+$base-font: "Public Sans";
+$font-bold: "Public Sans", "bold";
+$base-font-mono: "Space Mono";
+
+//Font Sizes
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;

@@ -1,0 +1,141 @@
+//---------Mixins
+
+// button
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// Flexbox mixin
+@mixin flexbox($direction: row, $align: center, $justify: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// Center Flex mixin
+@mixin centerFlex($direction: row) {
+  @include flexbox($direction, center, center);
+}
+
+// Wrapper mixin
+@mixin wrapper($width: auto, $height: auto, $border-color: $color-border) {
+  background-color: $color-background-light;
+  position: relative;
+  width: $width;
+  height: $height;
+  border: $base-border-thickness solid $border-color;
+  border-radius: $base-border-radius;
+}
+
+//small labels
+@mixin smallText() {
+  margin-bottom: 0.2rem;
+  font-size: $font-size-sm;
+  font-family: $base-font;
+  font-weight: 400;
+  padding-left: 8px;
+}
+
+//Input Fields/
+@mixin input-style {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: $color-background-light;
+  border: $base-border-thickness solid $color-border;
+  border-radius: $base-border-radius;
+  padding: 8px 16px;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+//...................................clean html setup
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: $base-font;
+}
+#root {
+  background-color: $color-background-dark;
+  margin: 0px;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+//.....................titles
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+h1 {
+  font-family: $base-font;
+  font-weight: 500;
+  font-size: 28px;
+  color: $color-text-base;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: $font-size-lg;
+  font-family: $base-font;
+  font-weight: 400;
+  color: $color-text-base;
+}
+
+h4,
+h5 {
+  font-size: $font-size-sm;
+  font-weight: 400;
+  color: $color-text-light;
+}
+
+h4 {
+  font-weight: 600;
+}
+
+//.....................scrollbar
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: $color-border-light;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $color-text-light;
+}
+
+//.....................input color
+
+input[type="color"] {
+  -webkit-appearance: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}

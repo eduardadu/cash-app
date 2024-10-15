@@ -1,0 +1,37 @@
+/* Login Wrapper */
+.login-wrapper {
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  transform: translate(0%, -50%);
+  @include flexbox(column);
+
+  @include wrapper(420px, 420px);
+
+  .title {
+    font-size: 1.4rem;
+    color: $color-primary;
+    margin-bottom: 4rem;
+  }
+
+  .login-form {
+    width: 240px;
+    margin-bottom: 3rem;
+
+    .login-input {
+      @include flexbox(column, start);
+      margin-bottom: 1rem;
+
+      input {
+        @include input-style; /* Use input-style mixin */
+      }
+
+      label {
+        color: $color-text-light;
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+        padding-left: 8px;
+      }
+    }
+  }
+}

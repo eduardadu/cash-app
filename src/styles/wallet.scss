@@ -1,0 +1,36 @@
+.wallet {
+  @include wrapper(560px);
+  position: relative;
+  max-height: 85vh;
+  overflow-y: hidden;
+
+  overflow-x: hidden;
+
+  .total {
+    font-family: $base-font-mono;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 100%;
+    color: $color-text-base;
+  }
+  .details {
+    border-bottom: $base-border-thickness solid $color-border-light;
+    .summary {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: end;
+    }
+  }
+}
+
+.amount {
+  font-family: $base-font-mono;
+  font-size: 24px;
+}
+.expense {
+  color: $color-expense;
+}
+.earning {
+  color: $color-earning;
+}

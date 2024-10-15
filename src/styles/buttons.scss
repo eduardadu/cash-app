@@ -1,0 +1,80 @@
+//---------------------------buttons
+
+//buttons
+@mixin btn($bg-color: $color-primary, $text-color: $color-background-light) {
+  background-color: $bg-color;
+  color: $text-color;
+  font-size: 16px;
+  line-height: 16px;
+  height: 36px;
+  text-align: center;
+  border-radius: $base-border-radius;
+  cursor: pointer;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+button {
+  all: unset;
+}
+
+.btn {
+  @include btn;
+}
+
+@each $key, $val in $colors {
+  .btn-#{$key} {
+    @include btn($val);
+    &:hover {
+      background-color: lighten($val, 10%);
+    }
+  }
+  .btn-outlined-#{$key} {
+    @include btn($color-background-light, $color-text-base);
+    border: $base-border-thickness solid $val;
+    color: $val;
+    &:hover {
+      background-color: $color-border-light;
+    }
+  }
+}
+
+@mixin cornerButton($side) {
+  position: absolute;
+  bottom: 1rem;
+
+  @if ($side == left) {
+    left: 1rem;
+  } @else {
+    right: 1rem;
+  }
+  @include centerFlex(row);
+}
+
+.add {
+  @include cornerButton(right);
+}
+.cancel {
+  @include cornerButton(left);
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.btn-small {
+  @include smallText();
+  padding: 4px 8px;
+  height: 20px;
+}
+
+/* Large Button */
+.btn-large {
+  margin: 0;
+  margin-top: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
