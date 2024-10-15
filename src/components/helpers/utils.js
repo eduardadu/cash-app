@@ -18,3 +18,7 @@ export const groupTransactionsByYearAndMonth = (transactions) => {
     return acc;
   }, {});
 };
+
+export const roundToTwo = (num) => {
+  return Math.round(num * 100) / 100;
+};

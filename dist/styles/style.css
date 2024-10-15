@@ -464,6 +464,9 @@ button {
   margin-bottom: 0.4rem;
   padding-left: 8px;
 }
+.login-wrapper .login-form .login-input .empty {
+  border-color: #bf5111;
+}
 
 /* Overlay */
 .overlay {
@@ -548,7 +551,6 @@ button {
 .error-message {
   background-color: rgb(251.1586538462, 226.3028846154, 211.8413461538);
   color: #bf5111;
-  width: 296px;
   border: 2px solid rgb(238.6538461538, 132.8846153846, 71.3461538462);
   border-radius: 8px;
   font-size: 0.75rem;

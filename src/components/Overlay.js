@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useCategories } from "../context/CategoryProvider.js";
 import CategorySelector from "./CategorySelector.js";
 import { useWallet } from "../context/WalletProvider.js";
+import { roundToTwo } from "./helpers/utils.js";
 
 function Overlay() {
   const {
@@ -42,7 +43,7 @@ function Overlay() {
         type: isExpense ? "Expense" : "Earning",
         category: selectedCategory.id,
         date: date,
-        amount: parseFloat(amount),
+        amount: roundToTwo(parseFloat(amount)),
         notes: notes,
       };
 
@@ -102,8 +103,8 @@ function Overlay() {
                 min="0.00"
                 step="0.01"
                 name="amount"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
+                value={amount.toFixed(2)}
+                onChange={(e) => setAmount(parseFloat(e.target.value) || 0)}
               />
             </div>
 

@@ -32,6 +32,10 @@
         margin-bottom: 0.4rem;
         padding-left: 8px;
       }
+
+      .empty {
+        border-color: $color-error;
+      }
     }
   }
 }
