@@ -1,5 +1,7 @@
 @use "sass:color";
-/* Login Wrapper */
+
+//Login
+
 .login-wrapper {
   margin: auto;
   position: fixed;
@@ -24,7 +26,7 @@
       margin-bottom: 1rem;
 
       input {
-        @include input-style; /* Use input-style mixin */
+        @include input-style;
       }
 
       label {
