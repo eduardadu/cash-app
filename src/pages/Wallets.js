@@ -63,7 +63,9 @@ function Wallets() {
         {overlay && <Overlay />}
       </section>
 
-      <div onClick={() => setAuth(false)}>Logout</div>
+      <button className="logout" onClick={() => setAuth(false)}>
+        Logout
+      </button>
     </>
   );
 }

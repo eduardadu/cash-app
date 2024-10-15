@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 import walletsData from "../dummy-backend/wallets.js";
+import { roundToTwo } from "../components/helpers/utils.js";
 
 const WalletContext = createContext();
 
@@ -64,14 +65,14 @@ export const WalletProvider = ({ children }) => {
   const getEarnings = () => {
     return transactions
       .filter((t) => t.type === "Earning")
-      .reduce((sum, t) => sum + Number(t.amount), 0);
+      .reduce((sum, t) => sum + roundToTwo(t.amount), 0);
   };
 
   // Get expenses for the current wallet
   const getExpenses = () => {
     return transactions
       .filter((t) => t.type === "Expense")
-      .reduce((sum, t) => sum + Number(t.amount), 0);
+      .reduce((sum, t) => sum + roundToTwo(t.amount), 0);
   };
 
   // Helper function to get the start of the last month and today's date
@@ -93,7 +94,7 @@ export const WalletProvider = ({ children }) => {
         (t) =>
           t.type === "Earning" && new Date(t.date) >= lastMonthStart && new Date(t.date) <= today
       )
-      .reduce((sum, t) => Number(sum) + Number(t.amount), 0);
+      .reduce((sum, t) => roundToTwo(Number(sum) + Number(t.amount)), 0);
   };
 
   // Get expenses from last month to today
@@ -104,13 +105,13 @@ export const WalletProvider = ({ children }) => {
         (t) =>
           t.type === "Expense" && new Date(t.date) >= lastMonthStart && new Date(t.date) <= today
       )
-      .reduce((sum, t) => Number(sum) + Number(t.amount), 0);
+      .reduce((sum, t) => roundToTwo(Number(sum) + Number(t.amount)), 0);
   };
   // Get total balance for the current wallet
   const getTotal = () => {
     const earnings = getEarnings();
     const expenses = getExpenses();
-    return earnings - expenses;
+    return roundToTwo(earnings - expenses);
   };
 
   return (

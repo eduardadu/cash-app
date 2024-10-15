@@ -1,8 +1,11 @@
 // Transaction Wrapper
 .transactions-wrapper {
   position: relative;
-  margin: 1rem;
-  height: 70vh;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  min-height: 0px;
+
+  max-height: 70vh;
   overflow: auto;
   @include flexbox(column);
 

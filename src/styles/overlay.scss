@@ -1,3 +1,5 @@
+@use "sass:color";
+
 /* Overlay */
 .overlay {
   z-index: 10;
@@ -45,7 +47,7 @@
     padding: 4px 8px;
     width: 100%;
     box-sizing: border-box;
-    color: lighten($color-text-base, 10%);
+    color: color.adjust($color-text-base, $lightness: 10%);
     &:focus {
       outline: none;
       border-color: $color-primary;
@@ -70,10 +72,10 @@
 
 /* Error Message */
 .error-message {
-  background-color: lighten($color-error, 50%);
+  background-color: color.adjust($color-error, $lightness: 50%);
   color: $color-error;
 
-  border: 2px solid lighten($color-error, 20%);
+  border: 2px solid color.adjust($color-error, $lightness: 20%);
   border-radius: $base-border-radius;
   font-size: $font-size-sm;
 }
@@ -144,7 +146,7 @@
 
       &:before {
         transform: translateX(112px);
-        background-color: lighten($color-expense, 30%);
+        background-color: color.adjust($color-expense, $lightness: 30%);
       }
     }
   }
@@ -167,7 +169,7 @@
       width: 120px;
       left: 4px;
       bottom: 4px;
-      background-color: lighten($color-earning, 30%);
+      background-color: color.adjust($color-earning, $lightness: 30%);
       border-radius: 18px;
       transition: 0.4s;
     }

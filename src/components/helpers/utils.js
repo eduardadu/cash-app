@@ -2,14 +2,13 @@
 export const groupTransactionsByYearAndMonth = (transactions) => {
   return transactions.reduce((acc, transaction) => {
     const date = new Date(transaction.date);
-    const year = date.getFullYear(); // Get the year as a number (e.g., 2024)
+    const year = date.getFullYear();
     const month = date.toLocaleString("en-GB", { month: "long" });
 
-    // Initialize year group if not exists
     if (!acc[year]) {
       acc[year] = {};
     }
-    // Initialize month group if not exists
+
     if (!acc[year][month]) {
       acc[year][month] = [];
     }
@@ -20,5 +19,5 @@ export const groupTransactionsByYearAndMonth = (transactions) => {
 };
 
 export const roundToTwo = (num) => {
-  return Math.round(num * 100) / 100;
+  return Math.round(Number(num) * 100) / 100;
 };

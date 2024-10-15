@@ -1,3 +1,4 @@
+@use "sass:color";
 /* Login Wrapper */
 .login-wrapper {
   margin: auto;
@@ -37,5 +38,16 @@
         border-color: $color-error;
       }
     }
+  }
+}
+
+.logout {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  color: $color-primary;
+  &:hover {
+    color: color.adjust($color-primary, $lightness: 10%);
+    cursor: pointer;
   }
 }

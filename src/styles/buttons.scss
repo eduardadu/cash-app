@@ -1,4 +1,4 @@
-//---------------------------buttons
+@use "sass:color";
 
 //buttons
 @mixin btn($bg-color: $color-primary, $text-color: $color-background-light) {
@@ -26,7 +26,7 @@ button {
   .btn-#{$key} {
     @include btn($val);
     &:hover {
-      background-color: lighten($val, 10%);
+      background-color: color.adjust($val, $lightness: 10%);
     }
   }
   .btn-outlined-#{$key} {
